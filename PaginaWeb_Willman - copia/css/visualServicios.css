@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding-top: 110px; /* Debe ser igual al height del header */
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.contenido-principal h1 {
+    font-size: 2.5rem;
+    color: #b20505;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: rgba(0, 0, 0, 0.5);
+}
+.contenido-principal p {
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.banner-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px 80px; /* Espacio horizontal y vertical entre iconos */
+    margin: 40px 0;
+}
+
+.banner {
+    width: 300px;
+    min-width: 250px;
+    height: 460px; /* Altura fija */
+    background: #f2f8fd;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.banner:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    
+}
+
+.banner img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 16px 16px 0 0;
+    display: block;
+    padding: 20px; /* Elimina el padding extra */
+
+}
+
+.banner-info {
+    width: 100%;
+    flex: 1;
+    background: #ffc0c03b;
+    color: #000000;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: justify;
+    border-radius: 0 0 16px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye el contenido y el botón */
+    height: 100%; /* Ocupa todo el espacio disponible */
+}
+
+
+.banner-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    text-align: center; /* Centra el título */
+}
+
+.banner-info p {
+    margin: 0;
+    font-size: 1rem;
+    text-align: justify; /* Justifica el párrafo */
+}
+
+.box-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #b20505;
+    color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.box-button:hover {
+    background-color: #ff3131;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.box-button a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: rgba(255, 0, 0, 0.5);
+}
+
+.modal-content {
+    padding: 20px;
+    position: relative;
+    width: 600px;
+    max-width: 90vw;
+    max-height: 90vh;      /* Limita la altura máxima al 90% de la ventana */
+    overflow-y: auto;      /* Permite el scroll vertical si el contenido es largo */
+    background: #fff;
+    color: #b20505;
+    text-shadow: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal-content h2 {
+    margin-top: 20px;
+}
+
+.modal-content ul{
+    padding: 20px;
+    font-size: 1rem;
+    text-align: justify;
+    color: #333;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+}
+
+.modal-content img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 30px;
+}
+
+.aparecer {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(.4,2,.6,1);
+}
+
+.aparecer.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
